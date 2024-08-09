@@ -18,7 +18,7 @@ I'm not going to teach you how to install and use Touch OSC. The guides and tuto
 
 ### Interface
 
-![[img/2020-R UI.png]]
+![ui](img/2020-R UI.png)
 
 Each of 2020's "Groups" is organised into tabs. Within each tab there are the same sub-groups (samplers, instruments etc.) as you find in the 2020 app.
 
