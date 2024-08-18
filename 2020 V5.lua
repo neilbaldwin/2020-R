@@ -749,7 +749,101 @@ PARAMETERS = {
 		{node = "/glitch/rotate/cell/right/", default = 0.0},
 		{node = "/glitch/rotate/beat/left/", default = 0.0},
 		{node = "/glitch/rotate/beat/right/", default = 0.0}
-	}
+	},
+	T_PITCH = {
+		type = "CONST",
+		{node = "/pitch/", default = 0.5}
+	},
+	T_LEVEL = {
+		type = "CONST",
+		{node = "/level/", default = 0.0}
+	},
+	T_RINGMOD_DEPTH = {
+		type = "CONST",
+		{node = "/ringmod/amount/", default = 0.0}
+	},
+	T_RINGMOD_FREQUENCY = {
+		type = "CONST",
+		{node = "/ringmod/frequency/", default = 0.0}
+	},
+	T_OVERTONE = {
+		type = "CONST",
+		{node = "/overtone/", default = 0.0}
+	},
+	T_LOWPASS = {
+		type = "CONST",
+		{node = "/filter/lowpass/", default = 1.0}
+	},
+	T_HIGHPASS = {
+		type = "CONST",
+		{node = "/filter/highpass/", default = 0.0}
+	},
+	T_RESONANCE = {
+		type = "CONST",
+		{node = "/filter/resonance/", default = 0.0}
+	},
+	T_LFO_SPEED = {
+		type = "CONST",
+		{node = "/lfo/frequency/", default = 0.5}
+	},
+	T_LFO_AMOUNT = {
+		type = "CONST",
+		{node = "/lfo/amount/", default = 0.5}
+	},
+	T_LFO_TARGET = {
+		type = "CONST",
+		{node = "/lfo/target/", default = 0.375}
+	},
+	T_SPEED = {
+		type = "CONST",
+		{node = "/speed/", default = 0.75}
+	},
+	T_SIZE = {
+		type = "CONST",
+		{node = "/size/", default = 0.5}
+	},
+	T_DIST = {
+		type = "CONST",
+		{node = "/distance/", default = 0.5}
+	},
+	T_JIT = {
+		type = "CONST",
+		{node = "/jit/", default = 0.5}
+	},
+	T_LFO1_SPEED = {
+		type = "CONST",
+		{node = "/lfo1/frequency/", default = 0.5}
+	},
+	T_LFO1_AMOUNT = {
+		type = "CONST",
+		{node = "/lfo1/amount/", default = 0.5}
+	},
+	T_LFO1_TARGET = {
+		type = "CONST",
+		{node = "/lfo1/target/", default = 0.0}
+	},
+	T_LFO1_SHAPE = {
+		type = "CONST",
+		{node = "/lfo1/waveform/", default = 0.0}
+	},
+	T_LFO2_SPEED = {
+		type = "CONST",
+		{node = "/lfo2/frequency/", default = 0.5}
+	},
+	T_LFO2_AMOUNT = {
+		type = "CONST",
+		{node = "/lfo2/amount/", default = 0.5}
+	},
+	T_LFO2_TARGET = {
+		type = "CONST",
+		{node = "/lfo2/target/", default = 0.25}
+	},
+	T_LFO2_SHAPE = {
+		type = "CONST",
+		{node = "/lfo2/waveform/", default = 0.0}
+	},
+	
+	
 }
 
 --[[

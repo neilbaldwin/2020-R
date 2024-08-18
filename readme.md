@@ -2,6 +2,10 @@
 
 2020-R is a Touch OSC project that adds even more random functionality to DUB-Russell's superb (and already very random) [2020 Beat Machine](https://2020.dubrussell.com/)
 
+#### Updates
+
+18-08-2024 Added support for the TONE group: LOOPER1, LOOPER2 and LOOPER3
+
 ### Rationale
 
 While 2020 is *packed* full of real-time randomisation, there is no function to generate random presets in the Samplers, Synths and FX. Why would you want to do that? As DUB-Russell says, *"Don't think, RANDOMISE!"* (he said "BEAT" but...you know...)
