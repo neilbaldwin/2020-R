@@ -4,6 +4,7 @@
 
 #### Updates
 
+19-08-2024 Added support for SLICER (on the TONE group tab). See below for information.
 18-08-2024 Added support for the TONE group: LOOPER1, LOOPER2 and LOOPER3
 
 ### Rationale
@@ -14,7 +15,7 @@ While 2020 is *packed* full of real-time randomisation, there is no function to 
 
 First off, if for some reason you've reached here and you don't have it,  you need [2020 Beat Machine](https://2020.dubrussell.com/)
 
-Then you need[ TouchOSC MK2 by Hexler](https://hexler.net/touchosc)
+Then you need[TouchOSC MK2 by Hexler](https://hexler.net/touchosc)
 
 TouchOSC MK2 added super-powerful LUA scripting which is what 2020-R uses to interact with the 2020 application.
 
@@ -26,7 +27,7 @@ I'm not going to teach you how to install and use Touch OSC. The guides and tuto
 
 Each of 2020's "Groups" is organised into tabs. Within each tab there are the same sub-groups (samplers, instruments etc.) as you find in the 2020 app.
 
-Within each sub-group there are two sections. On the right-hand side are the Send Controls. Here you can select if you want to send random absolute values (VALUE) or send randomised Probability and Range for the 2020 parameters that support that function. You can also elect to reset parameters back to their default values by selecting the RESET button. 
+Within each sub-group there are two sections. On the right-hand side are the Send Controls. Here you can select if you want to send random absolute values (VALUE) or send randomised Probability and Range for the 2020 parameters that support that function. You can also elect to reset parameters back to their default values by selecting the RESET button.
 
 The remainder of each group section is the Parameter Selection buttons. These are the ones that match the colour of the tab...and a *similar* colour to the corresponding Group in 2020) and are loosely organised into parameter types e.g. you'll find all Envelopes grouped in a "ENVS" group, all LFOs groups in a "LFO" group etc.
 
@@ -48,6 +49,16 @@ That's it!
 
 The FX tab is slightly different in that ALL of the FX parameters are grouped together. However there is an additional 'hidden' helper button in each FX type. Press/click on the strip below the grouped parameters to toggle the selection on/off.
 
+#### (TONE) SLICER
+
+Controls to randomise parameter for the SLICER group can be found on the TONE tab.
+
+Most of the control work in exactly the same way as other groups apart from the controls in the SEQ section. Here you'll find switches for STEPS, RES and a radial dial labelled DENSITY
+
+STEPS will randomise the vertical value of the current steps in the sequence. The DESNITY radial control controls how densely the seqence will be randomised.
+
+RES (resolution) randomises the number of divisions per step.
+
 ### Usage
 
 Feel free to use and modify it however you feel/need. You can dig into the script files in the TouchOSC editor but I've also included the LUA source code as separate files in case you find those useful. The same code is attached to buttons/documents in the TouchOSC project.
@@ -57,11 +68,3 @@ If you find it useful and want to support my work and future updates then you ca
 [Buy Me a Coffee](https://buymeacoffee.com/neilbaldwi3)
 
 🙏
-
-
-
-
-
-
-
-

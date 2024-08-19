@@ -842,6 +842,60 @@ PARAMETERS = {
 		type = "CONST",
 		{node = "/lfo2/waveform/", default = 0.0}
 	},
+	S_LOWPASS = {
+		type = "CONST",
+		{node = "/filter/lowpass/", default = 1.0}
+	},
+	S_HIGHPASS = {
+		type = "CONST",
+		{node = "/filter/highpass/", default = 0.0}
+	},
+	S_RESONANCE = {
+		type = "CONST",
+		{node = "/filter/resonance/", default = 0.0}
+	},
+	S_LFO_SPEED = {
+		type = "CONST",
+		{node = "/lfo/frequency/", default = 0.5}
+	},
+	S_LFO_AMOUNT = {
+		type = "CONST",
+		{node = "/lfo/amount/", default = 0.5}
+	},
+	S_LFO_TARGET = {
+		type = "CONST",
+		{node = "/lfo/target/", default = 0.375}
+	},
+	S_LFO_SHAPE = {
+		type = "CONST",
+		{node = "/lfo/waveform/", default = 0.0}
+	},
+	S_DRIVE = {
+		type = "CONST",
+		{node = "/overdrive/", default = 0.0}
+	},
+	S_DIV = {
+		type = "CONST",
+		{node = "/division/", default = 0.11811024}
+	},
+	S_SPD = {
+		type = "CONST",
+		{node = "/speed/", default = 1.0}
+	},
+	S_GRN = {
+		type = "CONST",
+		{node = "/grain/", default = 0.0}
+	},
+	S_SUS = {
+		type = "CONST",
+		{node = "/sustain/", default = 0.0}
+	},
+	S_STEPS = {
+		type = "CONST"
+	},
+	S_RES = {
+		type = "CONST"
+	}
 	
 	
 }
@@ -982,8 +1036,8 @@ The SEND button passes the group name plus the status of VALUES, RANGES and RESE
 ]]
 function onReceiveNotify(node, args)
 	-- Unpack parameters sent from SEND button scripts
-	local group, SW_VALUES, SW_RANGE, SW_RESET = table.unpack(args)
-	-- print(node, group)
+
+	local group, SW_VALUES, SW_RANGE, SW_RESET, RADIAL_DENSITY = table.unpack(args)
 	-- Get parameter list
 	group3_envs = {
 		ENV_AMP_OP1 = {prefix = "/op1", node = "ENV_AMP"},
@@ -1009,8 +1063,20 @@ function onReceiveNotify(node, args)
 		if (SW_VALUES == 1) then
 			-- Are we resetting values?
 			if (SW_RESET == 1) then
-				for i = 1, #pnodes do
-					sendOSC(string.format("%s%s%s", group, prefix, pnodes[i].node), pnodes[i].default)
+				if (node == "S_STEPS") then
+					for beat = 1, 32 do
+						for div = 1, 8 do
+						  sendOSC(string.format("/slicer/seq/%s/%s/", beat, div), 0.0)
+						end
+					end
+				elseif (node == "S_RES") then
+					for beat = 1, 32 do
+						sendOSC(string.format("/slicer/seq/resolution/%s/", beat), 0.42857143)
+					end
+				else	 
+					for i = 1, #pnodes do
+						sendOSC(string.format("%s%s%s", group, prefix, pnodes[i].node), pnodes[i].default)
+					end
 				end
 			else
 				-- Envelopes need special handling
@@ -1115,7 +1181,17 @@ function onReceiveNotify(node, args)
 							end
 							sendOSC(n, 1.0)
 						end
-
+					elseif (node == "S_STEPS") then
+						for beat = 1, 32 do
+							for div = 1, 8 do
+							  if (math.random() <= RADIAL_DENSITY) then v = math.random() else v = 0.0 end
+							  sendOSC(string.format("/slicer/seq/%s/%s/", beat, div), v)
+							end
+						end				
+					elseif (node == "S_RES") then
+						for beat = 1, 32 do
+							sendOSC(string.format("/slicer/seq/resolution/%s/", beat), math.random())
+						end					
 					else
 						for i = 1, #pnodes do
 							sendOSC(string.format("%s%s%s", group, prefix, pnodes[i].node), math.random())
