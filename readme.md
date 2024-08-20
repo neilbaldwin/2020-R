@@ -4,6 +4,7 @@
 
 #### Updates
 
+20-08-2024 WARNING: changed behaviour for RESET. Now RESET is a button that resets any selected parameters (it's no longer a selection button)
 19-08-2024 Added support for SLICER (on the TONE group tab). See below for information.
 18-08-2024 Added support for the TONE group: LOOPER1, LOOPER2 and LOOPER3
 
@@ -39,9 +40,9 @@ You first need to select the parameters you wish to randomise. You can select as
 
 Then on the right-hand side, select whether you want to send random absolute values (VALUES) or Probability and Range values (RANGE). Or both!
 
-Then press/click on the SEND button to send random values to 2020.
+Then press/click on the RANDOM button to send random values to 2020.
 
-You can also reset the selected parameters back to their default values by selecting the RESET button. When you press SEND the RESET button clears itself. This is deliberate.
+You can also reset the selected parameters back to their default values by clicking/pressing on the RESET button. Note this behaviour has changed since the 20-08-24 update.
 
 That's it!
 
