@@ -1182,6 +1182,7 @@ function onReceiveNotify(node, args)
 							sendOSC(n, 1.0)
 						end
 					elseif (node == "S_STEPS") then
+						-- Special case for Slicer sequencer steps
 						for beat = 1, 32 do
 							for div = 1, 8 do
 							  if (math.random() <= RADIAL_DENSITY) then v = math.random() else v = 0.0 end
@@ -1189,10 +1190,12 @@ function onReceiveNotify(node, args)
 							end
 						end				
 					elseif (node == "S_RES") then
+						-- Special case for Slicer sequencer step resolution
 						for beat = 1, 32 do
 							sendOSC(string.format("/slicer/seq/resolution/%s/", beat), math.random())
 						end					
 					else
+						-- Default for all other CONST values
 						for i = 1, #pnodes do
 							sendOSC(string.format("%s%s%s", group, prefix, pnodes[i].node), math.random())
 						end
