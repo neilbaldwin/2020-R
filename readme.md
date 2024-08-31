@@ -4,6 +4,8 @@
 
 #### Updates
 
+31-08-2024 Major update: now added PRESETS and MIXER tabs so you can recall presets and change mixer settings as part of performance
+
 20-08-2024 WARNING: changed behaviour for RESET. Now RESET is a button that resets any selected parameters (it's no longer a selection button)
 19-08-2024 Added support for SLICER (on the TONE group tab). See below for information.
 18-08-2024 Added support for the TONE group: LOOPER1, LOOPER2 and LOOPER3
